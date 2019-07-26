@@ -1,0 +1,317 @@
+# -*- mode:org; -*-
+
+#+title:Cracking the Coding Interview
+#+subtitle:189 Programming Questions & Solutions
+#+subtitle:(Last Saved {{{date}}} {{{version}}})
+#+date:2019-07-25 23:49
+#+macro:version Version 0.0.1
+#+macro:author Gayle Laakmann McDowell
+{{{heading(From the Author)}}}
+
+#+cindex:author
+I am not a recruiter. I am a software engineer. And as such, I know what it's
+like to be asked to whip up brilliant algorithms on the spot and then write
+flawless code on a whiteboard. I've been through this as a candidate and as an
+interviewer.
+
+{{{cite(Cracking the Coding Interview@@texinfo:@comma{}@@ 6th Edition)}}} is
+here to help you through this process, teaching you what you need to know and
+enabling you to perform at your very best. I've coached and interviewed
+hundreds of software engineers. The result is this book.
+
+Learn how to uncover the hints and hidden details in a question, discover how
+to break down a problem into manageable chunks, develop techniques to unstick
+yourself when stuck, learn (or re-learn) core computer science concepts, and
+practice on 189 interview questions and solutions.
+
+These interview questions are real; they are not pulled out of computer science
+textbooks. They reflect what's truly being asked at the top companies, so that
+you can be as prepared as possible.
+
+[[http://www.crackingthecodinginterview.com/][Cracking The Coding Interview Home]]
+
+#+texinfo:@insertcopying
+
+* Front Matter
+:PROPERTIES:
+:unnumbered: t
+:END:
+
+#+texinfo: @iftex
+{{{heading(From the Author)}}}
+
+#+cindex:author
+I am not a recruiter. I am a software engineer. And as such, I know what it's
+like to be asked to whip up brilliant algorithms on the spot and then write
+flawless code on a whiteboard. I've been through this as a candidate and as an
+interviewer.
+
+{{{cite(Cracking the Coding Interview@@texinfo:@comma{}@@ 6th Edition)}}} is here to help you
+through this process, teaching you what you need to know and enabling you to
+perform at your very best. I've coached and interviewed hundreds of software
+engineers. The result is this book.
+
+Learn how to uncover the hints and hidden details in a question, discover how
+to break down a problem into manageable chunks, develop techniques to unstick
+yourself when stuck, learn (or re-learn) core computer science concepts, and
+practice on 189 interview questions and solutions.
+
+These interview questions are real; they are not pulled out of computer science
+textbooks. They reflect what's truly being asked at the top companies, so that
+you can be as prepared as possible.
+
+[[http://www.crackingthecodinginterview.com/][Cracking the Coding Interview Home]]
+#+texinfo: @end iftex
+
+** What Is Inside
+- 189 programming interview questions, ranging from the basics to the trickiest
+  algorithm problems.
+- A walk-through of how to derive each solution, so that you can learn how to
+  get there yourself.
+- Hints on how to solve each of the 189 questions, just like what you would get
+  in a real interview.
+- Five proven strategies to tackle algorithm questions, so that you can solve
+  questions you haven't seen.
+- Extensive coverage of essential topics, such as big O time, data structures,
+  and core algorithms.
+- A behind the scenes look at how top companies like Google and Facebook
+  hire developers.
+- Techniques to prepare for and ace the soft side of the interview: behavioral
+  questions.
+- For interviewers and companies: details on what makes a good interview
+  question and hiring process.
+
+** Contents
+Now in the 6th edition, {{{cite(Cracking the Coding Interview)}}} gives you the
+interview preparation you need to get the top software developer jobs.  This is
+a deeply technical book and focuses on the software engineering skills to ace
+your interview.  The book is over 700 pages and includes 189 programming
+interview questions and answers, as well as other advice.
+
+** About the Author
+#+cindex:McDowell, Gayle Laakmann
+#+cindex:author, about
+#+cindex:@cite{The Good Resume}
+Gayle is the Founder / CEO of CareerCup.com and the author of two books:
+{{{cite{Cracking the Coding Interview}, Amazon.com's #1 best-selling interview
+book, and {{{cite{The Google Resume}}}.  She has worked for Google, Microsoft,
+and Apple and served on Google's hiring committee.  She holds a BSE and MSE in
+Computer Science from the University of Pennsylvania and an MBA from the
+Wharton School.
+
+** Solutions
+#+cindex:solutions, download
+Download Solutions:
+- https://github.com/gaylemcd/CtCI-6th-Edition
+
+
+#+cindex:Git, GitHub
+To Set Up Git / GitHub, follow instructions here:
+- https://help.github.com/articles/set-up-git
+
+
+#+cindex:Eclipse
+To Add Project to Eclipse
+1. Open Eclipse
+2. Go to File > New > Java Project
+3. Unselect "Use default location" and then browse to the location of the
+   source code on your computer
+4. Click OK
+
+** Resources
+*** Algorithms
+#+cindex:algorithms
+#+cindex:Cormen, Thomas
+#+cindex:Balkcom, Devin
+#+cindex:CLRS Algorithms
+[[https://www.khanacademy.org/computing/computer-science/algorithms][Computer Science Algorithms on Khan Academy]], from Thomas Cormen (of the
+{{{cite(CLRS Algorithms)}}} book) and Devin Balkcom
+*** A Good Resume
+#+cindex:resume
+- https://www.careercup.com/resume
+  #+cindex:LaTeX resume
+- [[https://github.com/dnl-blkv/mcdowell-cv][A Nice-looking CV template made into LaTeX]]
+
+** Forward
+I am here to help you solidify your understanding of computer science
+fundamentals and then apply those fundamentals to crack the coding interview.
+
+Receiving an offer is not about solving questions flawlessly---very few
+candidates do.  Rather, it is about answering questions /better than other
+candidates/.  So don't stress out when you get a tricky question---everyone
+else probably thought it was hard too.  It's okay not to be flawless.
+
+** Introduction
+Like many motivated candidates, he had prepared extensively.  He had read K&R's
+classic C book, and he'd reviewed CLRS's famous algorithms textbook.  He could
+describe in detail the myriad ways of balancing a tree, and he could do things
+in C that no sane programmer should ever want to do.
+
+I had to tell him the unfortunate news: those books aren't enough.  Academic
+books prepare you for fancy research, and they probably make you a better
+software engineer, but they're not sufficient for interviews.
+
+To crack the coding interview, you need to prepare with /real/ interview
+questions.  You must practice on /real/ problems and learn their patterns.
+It's about developing a fresh algorithm, not memorizing existing problems.
+
+{{{heading(Approach)}}}
+
+The focus of {{{cite(Cracking the Coding Interview)}}} is /algorithm/,
+/coding/, and /design questions/.  Why?  Because while you can and will be
+asked behavioral questions, the answers will be as varied as your resume.
+Likewise, while many firms will ask so-called "trivia" questions (e.g., "What
+is a virtual function?"), the skills developed through practicing these
+questions are limited to very specific bits of knowledge.  
+
+* The Interview Process
+This section offers an overview on [how] questions are selected and how you
+will be evaluated.  What happens when you get a question wrong?  When should
+you start preparing, and how?  What language should you use?  All these
+questions and more are answered.
+
+* Behind the Scenes
+Learn what happens behind the scenes during your interview, how decisions
+really get made, who you interview with, and what they ask you.  Companies
+covered include Google, Amazon, Palantir, Microsoft, Apple and Facebook.
+
+* Special Situations
+This section explains the process for experience candidates, Program Managers,
+Dev Managers, Testers / SDETs, and more.  Learn what your interviewers are
+looking for and how much code you need to know.
+
+* Before the Interview
+In order to ace the interview, you first need to get an interview.  This
+section describes what a software engineer's resume should look like and what
+you should be doing well before your interview.
+
+* Behavioral Questions
+Although most of a software engineering interview will be technical, behavioral
+questions matter too.  This section covers how to prepare for behavioral
+questions and how to give strong, structured responses.
+
+* Big O
+This is a critical topic for an interview.  In order to optimize your solution,
+you need to be able to discuss the efficiency of your algorithm.
+
+-  An Analogy
+-  Time Complexity
+-  Space Complexity
+-  Drop the Constants
+-  Drop the Non-Dominant Terms
+-  Multi-Part Algorithms: Add vs. Multiply
+-  Amortized Time
+-  Log N Runtimes
+-  Recursive Runtimes
+-  Examples and Exercises
+
+* Technical Questions
+This section covers how to prepare for technical questions (without wasting
+your time) and teaches actionable ways to solve the trickiest algorithm
+problems.  It also teaches you what exactly "good coding" is when it comes to
+an interview.
+
+-  How to Prepare
+-  What You Need To Know
+-  Walking Through a Problem
+-  Optimize & Solve Technique #1: Look for BUD
+-  Optimize & Solve Technique #2: DIY (Do It Yourself)
+-  Optimize & Solve Technique #3: Simplify and Generalize
+-  Optimize & Solve Technique #4: Base Case and Build
+-  Optimize & Solve Technique #5: Data Structure Brainstorm
+-  Best Conceivable Runtime (BCR)
+-  Handling Incorrect Answers
+-  When You’ve Heard a Question Before
+-  The “Perfect” Language for Interviews
+-  What Good Coding Looks Like
+-  Don’t Give Up!
+
+* The Offer and Beyond
+-  Handling Offers and Rejection
+-  Evaluating the Offer
+-  Negotiation
+-  On the Job
+
+* 189 Interview Questions
+This section forms the bulk of the book.  Each section opens with a discussion
+of the core knowledge and strategies to tackle this type of question, diving
+into exactly how you break down and solve it.  Topics covered include:
+
+-  Arrays and Strings
+-  Linked Lists
+-  Stacks and Queues
+-  Trees and Graphs
+-  Bit Manipulation
+-  Math and Logic Puzzles
+-  Object-Oriented Design
+-  Recursion and Dynamic Programming
+-  Sorting and Searching
+-  Scalability and Memory Limits
+-  Testing
+-  C and C++
+-  Java
+-  Databases
+-  Threads and Locks
+-  Assorted Moderate Problems
+-  Assorted Hard Problems
+
+
+For the widest degree of readability, the solutions are almost entirely written
+with Java (with the exception of C / C++ questions).  A link is provided with
+the book so that you can download, compile, and play with the solutions
+yourself.
+
+* Solutions
+
+* Advanced Topics
+
+* Code Library
+
+* Hints
+
+* About the Author
+
+* Copyright
+:PROPERTIES:
+:copying:  t
+:END:
+Content \copy 2015 by {{{author}}}
+
+Outline \copy 2019 by LOLH
+
+* Index
+:PROPERTIES:
+:index:    cp
+:unnumbered: t
+:END:
+
+* Program Index
+:PROPERTIES:
+:index:    pg
+:unnumbered: t
+:END:
+
+* Export Settings                                                  :noexport:
+** Export Options
+#+options: H:4
+
+** Texinfo Export
+#+texinfo_filename:cracking.info
+#+texinfo_class: info
+#+texinfo_header:
+#+texinfo_post_header:
+#+texinfo_dir_category:Programming
+#+texinfo_dir_title:Cracking: (cracking)
+#+texinfo_dir_desc:Cracking the Coding Interview
+#+texinfo_printed_title:Cracking the Coding Interview
+
+* Macro Definitions                                                :noexport:
+#+macro:heading @@texinfo:@heading @@$1
+#+macro:subheading @@texinfo:@subheading @@$1
+#+macro:cite @@texinfo:@cite{@@$1@@texinfo:}@@
+
+* Local Variables                                                  :noexport:
+# Local Variables:
+# time-stamp-pattern:"8/^\\#\\+date:%:y-%02m-%02d %02H:%02M$"
+# fill-column: 79
+# End:
